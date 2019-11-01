@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-app.get("/", (req, res) => res.send("HELLO WORLD"));
+app.get("/MERN/clients/src", (req, res) => res.send("App.js"));
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
