@@ -1,7 +1,0 @@
-exports['should render correctly with no props 1'] = 'ShallowWrapper {}';
-exports ['should render banner text correctly with given strings 1'] = 
-        'ShallowWrapper {<h1>Cities</h1>
-        <h2>Buenos Aires</h2>
-        <h2>Madrid</h2>
-        <h2>Nueva York</h2>
-        <h2>Milan</h2>}';
