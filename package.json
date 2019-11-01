@@ -8,7 +8,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd clients && npm run start",
-    "dev":"concurrently \"npm run server\""
+    "dev": "concurrently \"npm run server\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   "homepage": "https://github.com/DiegoM11/MERN#readme",
   "dependencies": {
     "concurrently": "^5.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "npm-i": "0.0.2"
   },
   "devDependencies": {
     "mongoose": "^5.7.7",
