@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "server": "nodemon server.js",
-    "client": "cd clients && npm run start",
-    "dev": "concurrently \"npm run server\""
+    "client": "cd clients/ && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\""
   },
   "repository": {
     "type": "git",

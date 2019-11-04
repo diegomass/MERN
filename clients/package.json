@@ -1,8 +1,12 @@
-{ "setupFiles": ["./src/setupTests.js"],
+{
+  "setupFiles": [
+    "./src/setupTests.js"
+  ],
   "name": "myfirstapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "npm-i": "0.0.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
