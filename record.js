@@ -1,4 +1,4 @@
-let CitiesModel = require('./models/cities')
+let CitiesModel = require('./models/City')
 
 let msg = new CitiesModel({
   name: 'Barcelon',
