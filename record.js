@@ -1,8 +1,8 @@
 let CitiesModel = require('./models/cities')
 
 let msg = new CitiesModel({
-  name: 'Rome',
-  country:'Italy',
+  name: 'Barcelon',
+  country:'Spain',
 })
 
 msg.save()
