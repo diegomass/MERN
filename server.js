@@ -8,7 +8,6 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://DiegoM11:ogeid019@myapp-lhs7m.gcp.mongodb.net/Myapp?retryWrites=true&w=majority').then( res => {
   console.log("Connected to DB")}).catch( err => {
@@ -17,5 +16,7 @@ mongoose.connect('mongodb+srv://DiegoM11:ogeid019@myapp-lhs7m.gcp.mongodb.net/My
 
   app.get("/", (req, res) => res.send("HOME"));
   app.get("/test", (req, res) => res.send('HELLO WORLD'));
+  app.get("/cities/all", (req, res) => res.send("cities"));
+
 
   app.listen(port, () => console.log(`Server running on port ${port}`));
