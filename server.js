@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://DiegoM11:ogeid019@myapp-lhs7m.gcp.mongodb.net/My
 
   app.get("/", (req, res) => res.send("HOME"));
   app.get("/test", (req, res) => res.send('HELLO WORLD'));
-  app.get("/cities/all", (req, res) => res.send(""));
+  app.get("/cities/all", (req, res) => res.send("test"));
 
 
   app.listen(port, () => console.log(`Server running on port ${port}`));
