@@ -18,13 +18,12 @@ console.log("err: " + err);
 app.get("/", (req, res) => res.send("HOME"));
 app.get("/test", (req, res) => res.send('HELLO WORLD'));
 app.get("/cities/all", async (req, res) => {
+      Cities.find(all ,(err, cities ) => { 
+      if (err) return res.status(500).send({message: 'Error al realizar la peticion: ${err}'})
+      if (!cities) return res.status(404).send({message: 'No existe'})
 
-
-    res.send(
-
-      
-    );
-
+      res.status(200).send({ cities })
+    })
   });
 
 app.post('/models/City', (req, res) => {
