@@ -20,7 +20,7 @@ app.get("/cities/all", async (req, res) => {
     if (err) return res.status(500).send({message: "Error al realizar la peticion: ${err}"})
     if (!cities) return res.status(404).send({message: 'No esta definido'})
 
-    res.send(200, { cities })
+    res.send(200, { Cities })
   })       
   });
 
