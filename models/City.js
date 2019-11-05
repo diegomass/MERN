@@ -5,4 +5,4 @@ let CitiesSchema = new Schema({
     name: String,
     country: String
   })
-module.exports = User = mongoose.model('Cities', CitiesSchema);
+module.exports = mongoose.model('Cities', CitiesSchema);
