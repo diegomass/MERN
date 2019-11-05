@@ -18,7 +18,7 @@ console.log("err: " + err);
 app.get("/cities/all", async (req, res) => {    
   if(res.status(200)){
         Cities.find({}).then( data => {
-          console.log("datos por consola:" + data);
+          console.log(data);
           res.json(data);
         }).catch( err => {console.log("err: " + err);});
       }
