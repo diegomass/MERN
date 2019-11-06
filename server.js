@@ -16,16 +16,18 @@ console.log("Connected to DB")}).catch( err => {
 console.log("err: " + err);
 });
 
-app.get('/hello', (req, res) => {
+app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
-app.post('/world', (req, res) => {
+app.post('/api/world', (req, res) => {
   console.log(req.body);
   res.send(
     `I received your POST request. This is what you sent me: ${req.body.post}`,
   );
 });
+
+
 
 app.get("/cities/", cors(), async (req, res) => {
   if(res.status(200)){
