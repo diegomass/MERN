@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-const Cities = require('./models/City')
+const Cities = require('./models/City');
+const cors = requiere('cors')
 
 const port = process.env.PORT || 5000;
 
@@ -14,6 +15,16 @@ mongoose.connect('mongodb+srv://DiegoM11:ogeid019@myapp-lhs7m.gcp.mongodb.net/My
 console.log("Connected to DB")}).catch( err => {
 console.log("err: " + err);
 });
+
+
+app.get("/cities/", cors(), async (req, res) => {
+  if(res.status(200)){
+    Cities.find({}).then( data => {
+      console.log(data);
+      res.json(data);
+    }).catch( err => {console.log("err: " + err);});
+  }
+});    
 
 app.get("/cities/all", async (req, res) => {    
   if(res.status(200)){
