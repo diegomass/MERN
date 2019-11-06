@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 const Cities = require('./models/City');
-const cors = requiere('cors')
+const cors = require('cors')
 
 const port = process.env.PORT || 5000;
 
