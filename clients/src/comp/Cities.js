@@ -3,8 +3,6 @@ import logo from '../img/MYtineraryLogo.png';
 import home from '../img/homeIcon.png';
 import CitiesList from '../comp/CitiesList'
 
-const CITIES_SERVICE_URL = 'localhost:5000/cities';
-
 class Cities extends React.Component{
   render() {
     return (   
@@ -20,18 +18,6 @@ class Cities extends React.Component{
         </nav>
       </div>
   )};
-}
-componentDidMount(); {
-  this.fetchCities()
-}
-
-fetchCities = () => {
-  this.setState({...this.state, isFetching: true})
-  fetch(CITIES_SERVICE_URL)
-    .then(response => response.json())
-    .then(result => this.setState({cities: result, 
-                                   isFetching: false}))
-    .catch(e => console.log(e));
 }
 
 export default Cities;
