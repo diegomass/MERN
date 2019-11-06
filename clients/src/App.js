@@ -7,7 +7,16 @@ import Account from './comp/Account';
 import './App.css';
 import './index.css';
 
+
+
+
+
 class App extends React.Component{
+  constructor(props){
+    this.state = {
+      isFetching: false,
+      cities: ['1']};
+    }
   render() {
     return (
       <div className="App">
