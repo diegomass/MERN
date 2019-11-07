@@ -11,8 +11,6 @@ class CitiesList extends React.Component{
           cities: null
         }
     }
-        // class CitiesList = ({cities}) =>
-        // cities.map(cities => <li key={cities}>{cities}</li>)
 
         componentDidMount() {
             this.fetchCities()
@@ -30,20 +28,14 @@ class CitiesList extends React.Component{
           }
 
     render() {
-        const { cities } = this.state;
         return (
           <ul>
-            {cities.map(City =>
-              <li key={City.objectID}></li>
+            {CitiesList.map(_id =>
+              <li key={_id.objectID}></li>
             )}
           </ul>
         );
       }
     }
-    /*return <div> {class CitiesList { cities } =
-
-        cities.map(cities => <li key={cities}>{cities}</li>)}
-    }
-     </div>*/
 
 export default CitiesList;
