@@ -1,16 +1,13 @@
 import React from 'react';
+// import Componente from './Componente';
 
-const CITIES_SERVICE_URL = 'localhost:5000/cities';
+const CITIES_SERVICE_URL = 'http://localhost:5000/cities';
 
 class CitiesList extends React.Component{
-
-    constructor(props){
-        super();
-        this.state = {
-          isFetching: false,
-          cities: null
-        }
-    }
+    state = {
+        isFetching: false,
+        cities: null
+      }
 
         componentDidMount() {
             this.fetchCities()
@@ -29,13 +26,22 @@ class CitiesList extends React.Component{
 
     render() {
         return (
-          <ul>
-            {CitiesList.map(_id =>
-              <li key={_id.objectID}></li>
-            )}
-          </ul>
-        );
-      }
+            <div>asd
+                {console.log(this.state.cities)}
+            </div>
+        )
+      };
     }
 
 export default CitiesList;
+
+
+// <div>
+// <ul>
+//     {/* <Componente name="asd"/> */}
+   
+//    { this.state.cities.map( (dato) =>
+//     <li key={dato._id}></li>
+//   )}
+// </ul>
+// </div>
