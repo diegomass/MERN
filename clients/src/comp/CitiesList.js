@@ -29,17 +29,21 @@ class CitiesList extends React.Component{
               .catch(e => console.log(e));
           }
 
-render(){
-    return <div> {class CitiesList { cities } =
+    render() {
+        const { cities } = this.state;
+        return (
+          <ul>
+            {cities.map(City =>
+              <li key={City.objectID}></li>
+            )}
+          </ul>
+        );
+      }
+    }
+    /*return <div> {class CitiesList { cities } =
 
         cities.map(cities => <li key={cities}>{cities}</li>)}
     }
-     </div>
-
-
-}
-
-
-}
+     </div>*/
 
 export default CitiesList;
