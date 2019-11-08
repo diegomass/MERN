@@ -11,7 +11,7 @@ class Cities extends React.Component{
         <img src={logo} className="App-logo" alt="logo"/>  
         </div>
         <div>
-        {CitiesList}
+        <CitiesList />
         </div>
         <nav>
         <a href="/"><img src={home} className="App-home" alt="home"/></a>
