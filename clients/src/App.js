@@ -12,7 +12,7 @@ import store from './store';
 
 class App extends React.Component{
 
-  state = {
+  /*state = {
     response: '',
     post: '',
     responseToPost: '',
@@ -44,7 +44,7 @@ class App extends React.Component{
     const body = await response.text();
     
     this.setState({ responseToPost: body });
-  };
+  };*/
   
   render() {
     return (

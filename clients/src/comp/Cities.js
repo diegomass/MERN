@@ -28,11 +28,11 @@ class Cities extends React.Component{
 
 Cities.propTypes = {
   getCities: PropTypes.func.isRequired,
-  city: PropTypes.object.isRequired
+  cities: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  cities: state.city
+  cities: state.cities
 });
 
 export default connect(mapStateToProps, { getCities })(Cities);
