@@ -2,8 +2,14 @@ import React from 'react';
 import logo from '../img/MYtineraryLogo.png';
 import home from '../img/homeIcon.png';
 import CitiesList from '../comp/CitiesList'
+import { connect } from 'react-redux';
+import { getCities } from '../actions/citiesActions';
+import PropTypes from 'prop-types';
 
 class Cities extends React.Component{
+  componentDidMount(){
+    this.props.getCities();
+}
   render() {
     return (   
       <div>
@@ -20,4 +26,13 @@ class Cities extends React.Component{
   )};
 }
 
-export default Cities;
+Cities.propTypes = {
+  getCities: PropTypes.func.isRequired,
+  city: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  cities: state.city
+});
+
+export default connect(mapStateToProps, { getCities })(Cities);
