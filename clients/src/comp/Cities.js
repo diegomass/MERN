@@ -11,6 +11,7 @@ class Cities extends React.Component{
     this.props.getCities();
 }
   render() {
+    //const { city } = this.props.cities
     return (   
       <div>
         <div>

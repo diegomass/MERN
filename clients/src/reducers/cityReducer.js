@@ -1,9 +1,7 @@
 import { GET_CITIES, ADD_CITIES, DELETE_CITIES } from '../actions/types';
 
 const initialState = {
-    cities: [
-
-    ]
+    cities: []
 }
 
 export default function(state = initialState, action){
