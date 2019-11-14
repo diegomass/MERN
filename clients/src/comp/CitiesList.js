@@ -10,9 +10,11 @@ class CitiesList extends React.Component{
             this.props.getCities();
           }
           render() {
+            console.log(this.props.cities);
             const ListCities = this.props.cities.map((ciudad) => <li key={ciudad._id}>{ciudad.name}</li> );
+            //console.log(ListCities)
             return(
-            <div> <ul> {ListCities} </ul> </div>
+            <div>  {ListCities}  </div>
             )
        };
     }
