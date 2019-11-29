@@ -11,6 +11,12 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next()
+// });
+
+
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://DiegoM11:ogeid019@myapp-lhs7m.gcp.mongodb.net/Myapp?retryWrites=true&w=majority').then( res => {
 console.log("Connected to DB")}).catch( err => {
@@ -20,13 +26,13 @@ console.log("err: " + err);
 app.get("/cities/", cors(), async (req, res) => {
   if(res.status(200)){
     Cities.find({}).then( data => {
-      console.log(data);
+      //console.log(data);
       res.json(data);
     }).catch( err => {console.log("err: " + err);});
   }
 });    
 
-app.post('/models/City', (req, res) => {
+app.post("/test/City", async (req, res) => {
   console.log('POST /models/City')
   console.log(req.body)
 
@@ -41,20 +47,56 @@ app.post('/models/City', (req, res) => {
 
 })
 
-app.get("/itinerary/id", cors(), async (req, res) => {    
+app.get("/account/", cors(), async (req, res) => {
+  
   if(res.status(200)){
-        Itinerary.find({}).then( data => {
-          console.log(data);
-          res.json(data);
-        }).catch( err => {console.log("err: " + err);});
-      }
-  });
-app.post('/models/Itinerary', (req, res) => {
+    Users.find({}).then( data => {
+      console.log(data);
+      res.json(data);
+    }).catch( err => {console.log("err: " + err);});
+  }
+}); 
+
+app.post('/test/User', (req, res) => {
+
+
+  console.log('POST /models/User')
+  console.log(req.body)
+  console.log("req.params")
+  console.log(req.params)
+
+  let users = new Users()
+  users.username = req.body.username
+  users.password = req.body.password
+  users.email = req.body.email
+  users.firstName = req.body.firstName
+  users.lastName = req.body.lastName
+
+  users.save((err, usersStored) =>{  
+    if (err) res.status(500).send({ message: 'Error'})
+    res.status(200).send({ users: usersStored})
+  })
+
+})
+
+app.get('/cities/:id', cors(), async (req, res) => {
+  //console.log(req.params)
+  console.log(req.params.id)
+  if(res.status(200)){
+    Itinerary.find( {cityid: req.params.id})
+    .populate('cityid')
+     .then( data => {
+       console.log(data);
+       res.json(data);
+     }).catch( err => {console.log("err: " + err);});
+   }
+});
+
+/*app.post('/models/Itinerary', (req, res) => {
     console.log('POST /models/Itinerary')
     console.log(req.body)
   
-    let it = new Itineraries()
-    it.id = req.body.id
+    let it = new Itinerary()
     it.cityid = req.body.cityid
     it.title = req.body.title
     it.profilePic = req.body.profilePic
@@ -68,5 +110,5 @@ app.post('/models/Itinerary', (req, res) => {
       res.status(200).send({ it: itStored})
     })
   
-})
+})*/
 app.listen(port, () => console.log(`Server running on port ${port}`));
